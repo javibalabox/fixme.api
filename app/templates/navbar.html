@@ -1,0 +1,248 @@
+<style>
+  .xx-navbar {
+      width: 100%;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      z-index: 20;
+      background: #fff;
+      top: 0;
+  }
+
+  .xx-nav-profile {
+      display: inline-block;
+      border-left: 1px solid #cacaca;
+      padding-left: 15px;
+      line-height: 35px;
+  }
+  
+  .xx-topbar {
+      /*background: linear-gradient(to right, #0081c8,#00c3f4);*/
+      background: #0081c8;
+      color: #fff;
+      text-align: right;
+      padding: 3px 50px;
+  }
+
+  .xx-bottombar {
+      padding: 0px 50px;
+  }
+
+  .xx-navbar .xx-logo {
+      width: 160px;
+      display: inline-block;
+      line-height: 75px;
+      float: left;
+  }
+
+  .xx-navbar .xx-logo img {
+      max-width: 100%;
+  }
+
+  .xx-navbar .xx-navbar-menu {
+    display: inline-block;
+  }
+
+  .xx-navbar .xx-navbar-menu {
+      display: inline-block;
+      float: right;
+      line-height: 75px;
+  }
+
+  .xx-navbar-menu a {
+      color: #656565!important;
+      margin: 0px;
+      padding: 0px 10px;
+      text-decoration: none!important;
+  }
+
+  a.xx-btn-1 {
+      border: 2px solid #0082c8;
+      padding: 5px 15px;
+      border-radius: 3px;
+      text-align: center;
+      color: #0082c8!important;
+  }
+
+  a.xx-btn-2 {
+      border: 2px solid #0082c8;
+      padding: 5px 15px;
+      border-radius: 3px;
+      text-align: center;
+      color: #ffffff!important;
+      background: #0082c8;
+  }
+
+  .xx-navbar-menu a.xx-btn-2 {
+      margin-left: 10px;
+  }
+
+  /*Mobile*/
+  .pp-mobile-navbar {
+      padding: 0px 25px;
+      width: 100%;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      z-index: 20;
+      background: #fff;
+      top: 0;
+  }
+
+  .pp-mobile-navbar .pp-logo {
+      width: 120px;
+      display: inline-block;
+      line-height: 70px;
+  }
+
+  .pp-logo img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+  .pp-mobile-menu-btn {
+      display: inline-block;
+      float: right;
+      font-size: 20px;
+      line-height: 70px;
+      width: 50px;
+      text-align: center;
+  }
+
+  .pp-mobile-menu-btn a {
+      color: #419fad!important;
+      width: 100%;
+  }
+
+  .mobile-menu-list {
+      position: fixed;
+      background: rgba(255, 255, 255, 1);
+      z-index: 101;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      padding: 50px 0px;
+      transition: 0.3s;
+      visibility: hidden;
+      opacity: 0;
+      padding-top: 35px;
+      top: 0;
+  }
+
+  .mobile-menu-list.open {
+      visibility: visible;
+      opacity: 1;
+  }
+
+  .mobile-menu-list a {
+      display: block;
+      font-size: 25px;
+      color: #4caf90;
+      font-weight: 100;
+      padding: 5px 0px;
+  }
+
+  .mobile-menu-list .close-menu-btn {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #ffc107;
+      color: #fff;
+  }
+
+  .pp-mobile-menu-btn i {
+      color: #171717;
+  }
+
+  .mobile-menu-list i {
+      color: white;
+      width: 30px;
+      height: 30px;
+      background: #ffc107;
+      line-height: 30px;
+      font-size: 14px;
+      border-radius: 50px;
+  }
+
+  .mobile-menu-list a.xx-btn-2 {
+      padding: 3px 0px;
+      max-width: 230px;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: none;
+      font-weight: 400;
+  }
+
+  .mobile-menu-list a {
+      display: block;
+      font-size: 25px;
+      color: #353535;
+      font-weight: 500;
+      padding: 10px 0px;
+      text-decoration: none!important;
+  }
+</style>
+
+<div class="xx-navbar no-mobile">
+  <div class="xx-topbar">
+    <span>Need help? Contact us here: contact@balabox.com</span>
+  </div>
+  <div class="xx-bottombar">
+    <div class="xx-logo">
+      <a href="[[home_url]]">
+        <img src="[[logo]]">
+      </a>
+    </div>
+    <div class="xx-navbar-menu">
+      <a href="#">Become a host</a>
+      <a href="#">Help</a>
+      <a href="#" class="xx-btn-1">Sign Up</a>
+      <a href="#" class="xx-btn-2">Log In</a>
+    </div>
+  </div>
+</div>
+
+<div class="pp-mobile-navbar no-desktop">
+  <div class="pp-logo">
+    <a href="[[home_url]]">
+    <img src="[[logo]]">
+    </a>
+  </div>
+
+  <div class="pp-mobile-menu-btn">
+    <a href="#"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<div class="mobile-menu-list" id="mobile-menu-list">
+  <a href="./"><i class="fa fa-home"></i> Inicio</a>
+  <a href="nosotros"><i class="fa fa-bookmark"></i> Nosotros</a>
+  <a href="productos"><i class="fa fa-cubes"></i> Productos</a>
+  <a href="contacto" style="border: none;"><i class="fa fa-info-circle"></i> Contacto</a>
+  <a href="#" class="xx-btn-2"><i class="fa fa-phone" style="margin-right: 10px;"></i>¡Llamar ya!</a>
+  <a href="#" class="close-menu-btn">Cerrar menu</a>
+</div>
+
+<script>
+  var nav_open = false;
+  $(".pp-mobile-menu-btn").on("click", function(e){
+    e.preventDefault();
+    if (!nav_open) {
+      $(".mobile-menu-list").addClass("open");
+      nav_open = true;
+    } else {
+      $(".mobile-menu-list").removeClass("open");
+      nav_open = false;
+    }
+  });
+
+
+  $(".close-menu-btn").on("click", function(e){
+    e.preventDefault();
+    if (!nav_open) {
+      $(".mobile-menu-list").addClass("open");
+      nav_open = true;
+    } else {
+      $(".mobile-menu-list").removeClass("open");
+      nav_open = false;
+    }
+  });
+</script>

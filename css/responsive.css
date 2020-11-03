@@ -1,0 +1,13 @@
+@media (max-width : 767px) {
+    body .xx-cover .xx-cover-img {
+        background-attachment: scroll;
+    }
+
+    body .no-desktop {
+        display: block!important;
+    }
+
+    body .no-mobile {
+        display: none!important;
+    }
+}
