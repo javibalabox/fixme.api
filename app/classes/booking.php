@@ -22,7 +22,7 @@ class Booking
 	}
 
 	//Register new booking
-	public function book_new_service($client_user_id, $worker_user_id, $service_id, $appointment_date, $appointment_location, $payment_action, $method, $card_id, $coupon, $status)
+	public function book_new_service($client_user_id, $worker_user_id, $service_id, $appointment_date, $appointment_time, $appointment_location, $payment_action, $method, $card_id, $coupon, $status)
 	{
 		global $extras_class;
 		global $services_class;
@@ -45,6 +45,7 @@ class Booking
 				$worker_user_id = mysqli_real_escape_string($this->conn, $worker_user_id);
 				$service_id = mysqli_real_escape_string($this->conn, $service_id);
 				$appointment_date = mysqli_real_escape_string($this->conn, $appointment_date);
+				$appointment_time = mysqli_real_escape_string($this->conn, $appointment_time);
 				$appointment_location = mysqli_real_escape_string($this->conn, $appointment_location);
 				$payment_action = mysqli_real_escape_string($this->conn, $payment_action);
 
@@ -58,7 +59,7 @@ class Booking
 				$status = mysqli_real_escape_string($this->conn, $status);
 
 
-				$sql = "INSERT INTO bookings (booking_id,client_user_id,service_id,appointment_date,appointment_location,payment_action,coupon_id, status,creation_date,payment_details) VALUES ('$booking_id', '$client_user_id', '$service_id', '$appointment_date', '$appointment_location', '$payment_action', '$coupon', '$status', '$date', '$payment_details')";
+				$sql = "INSERT INTO bookings (booking_id,client_user_id,service_id,appointment_date,appointment_time,appointment_location,payment_action,coupon_id, status,creation_date,payment_details) VALUES ('$booking_id', '$client_user_id', '$service_id', '$appointment_date', '$appointment_time', '$appointment_location', '$payment_action', '$coupon', '$status', '$date', '$payment_details')";
 				if (mysqli_query($this->conn, $sql)) {
 					$request_worker = $this->request_worker($booking_id);
 					if ($request_worker[0]["status"] == "true") {
@@ -799,8 +800,6 @@ class Booking
 							$bookings_array[] = $booking_filtered_array;
 						}
 					}
-
-					
 				}
 				$response_array = $extras_class->response("true", "s1", "Se obtuvo la lista de bookings para el trabajador seleccionado con éxito.", "both");
 				$response_array[] = array("bookings_list" => $bookings_array);

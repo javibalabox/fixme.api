@@ -362,6 +362,11 @@ switch ($action) {
 				array_push($errores_array, 'Falta el campo appointment_date');
 			}
 
+			$appointment_time = $data->appointment_time;
+			if ($appointment_time == null) {
+				array_push($errores_array, 'Falta el campo appointment_time');
+			}
+
 			$appointment_location = $data->appointment_location;
 			if ($appointment_location == null) {
 				array_push($errores_array, 'Falta el campo appointment_location');
@@ -402,6 +407,7 @@ switch ($action) {
 					$worker_user_id,
 					$service_id,
 					$appointment_date,
+					$appointment_time,
 					$appointment_location,
 					$payment_action,
 					$method,
